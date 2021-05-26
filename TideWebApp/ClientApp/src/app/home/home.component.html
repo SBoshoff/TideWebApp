@@ -1,0 +1,21 @@
+<h1>Tide Services Flood Warning Web Application</h1>
+
+<form action="submit()" class="form" #queryForm>
+  <label>
+    Name:
+    <input [class.invalid]="name.invalid && name.dirty" type="text" [formControl]="name" [(ngModel)]="query.region" required id="region">
+  </label>
+
+  <label>
+    Page Size:
+    <input [class.invalid]="pageSize.invalid && pageSize.dirty" type="number" [formControl]="pageSize" [(ngModel)]="query.pageSize">
+  </label>
+
+  <label>
+    Page Number:
+    <input [class.invalid]="pageNum.invalid && pageNum.dirty" type="number" [formControl]="pageNum" [(ngModel)]="query.pageNum">
+  </label>
+  <button type="submit" [class.disabled]="name.invalid || pageSize.invalid || pageNum.invalid" class="btn btn-primary" (click)="submit()">Search</button>
+</form>
+
+<app-warning-list *ngIf="data.length > 0" [tableData]="data"></app-warning-list>

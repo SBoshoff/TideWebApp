@@ -1,0 +1,15 @@
+.Severe {
+    background-color: red;
+}
+
+.High {
+    background-color: orange;
+}
+
+.Mild {
+    background-color: yellow;
+}
+
+.None {
+    background-color: lightgreen;
+}
